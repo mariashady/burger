@@ -4,7 +4,7 @@ const connection = require("./connection.js");
 
 const orm = {
     select: (table, cb) => {
-        let query = "SELECT * FROM ??";
+        let query = "SELECT * FROM burger_db";
 
         connection.query(query, [table], (err, results) => {
             if(err) {
@@ -16,3 +16,5 @@ const orm = {
         });
     }
 };
+
+module.exports = orm;

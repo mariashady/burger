@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 
@@ -17,7 +17,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-const routes = require("./controllers/burger_controllers");
+const routes = require("./controllers/burgers_controller");
 
 app.use(routes);
 
