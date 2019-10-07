@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+
+body {
+    background: url("https://www.thechunkychef.com/wp-content/uploads/2015/09/Dr-Pepper-BBQ-Burgers-8.jpg") no-repeat center;
+    background-size: cover;
+    margin-bottom: none;
+    color: white;
+    margin-left: 90px
+     
+}
+
+#header {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 60px;
+}
+
+.sub-header {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 25px;
+}

@@ -10,6 +10,9 @@ const burger = {
         orm.create("burgers", column, values, (results) => {
             cb(results);
         });
+    },
+    update: (column, newVal, whereCol, whereCal, cb) => {
+        cb(results);
     }
 }
 
