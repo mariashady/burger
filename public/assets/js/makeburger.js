@@ -1,15 +1,16 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+$(document).ready(function() {
     $(".devourBurgerBtn").on("click", function(event) {
+      console.log("click");
       var id = $(this).data("id");
-      var newBurgerStatus = $(this).data("newBurgerStatus");
+      // var newBurgerStatus = $(this).data("newBurgerStatus");
   
       var newBurgerStatus = {
         "devoured": true
       };
-  
+      console.log(newBurgerStatus, id)
       // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/api/burger/" + id, {
         type: "PUT",
         data: newBurgerStatus
       }).then(
@@ -20,24 +21,18 @@ $(function() {
         }
       );
     });
-  
 
-    //Top portion should be correct
-
-
-
-
-    $("#addBurgerBtn").on("submit", function(event) {
+    $("#addBurgerForm").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        name: $("#addBurgerBtn").val().trim(),
+        name: $("#name").val().trim(),
         
       };
   
       // Send the POST request.
-      $.ajax("/api/burgers", {
+      $.ajax("/api/burger", {
         type: "POST",
         data: newBurger
       }).then(
@@ -49,6 +44,8 @@ $(function() {
       );
     });
   
-   
+
+    //Top portion should be correct
+  
   });
   

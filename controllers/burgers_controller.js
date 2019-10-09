@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 router.post("/api/burger", (req, res) => {
     let newBurger = req.body.name;
 
-    burger.create("burger_name", newBurger, (result) => {
+    burger.create(newBurger, (result) => {
         if (result.affectedRows === 0) {
             return res.status(404).end();
         }
@@ -25,8 +25,9 @@ router.post("/api/burger", (req, res) => {
 
 router.put("/api/burger/:id", (req, res) => {
     let status = Boolean(req.body.devoured);
-
-    burger.update("devoured", status, "id", req.params.id, (result) => {
+    console.log(status);
+    var condition = "id = " + req.params.id;
+    burger.update({"devoured": status}, condition, (result) => {
         if (result.changedRows === 0) {
             return res.status(404).end();
         }

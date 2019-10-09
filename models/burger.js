@@ -6,14 +6,16 @@ const burger = {
             cb(results);
         });
     },
-    create: (column, values, cb) => {
-        orm.create("burgers", column, values, (results) => {
+    create: (value, cb) => {
+        orm.create("burgers", ["burger_name", "devoured"], [value, false], (results) => {
             cb(results);
         });
     },
-    update: (column, newVal, whereCol, whereCal, cb) => {
-        cb(results);
-    }
+    update: function(column, condition, cb) {
+        orm.update("burgers", column, condition, function(res) {
+          cb(res);
+        });
+      },
 }
 
 module.exports = burger;
